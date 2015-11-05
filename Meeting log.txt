@@ -1,0 +1,7 @@
+Nov 4, 2015
+To Do:
+    -Layout for calculator page/function (within a course)
+        -Weighted categories
+        -Percent breakdown for letter grades
+    -Saving information to the device/cloud
+    -Pulling information from Progressbook/T-Square
