@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C33961801BEBDEB0004F0604 /* GradeComputerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C339617F1BEBDEB0004F0604 /* GradeComputerViewController.swift */; };
 		C34450621B52FEF9006529B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34450611B52FEF9006529B4 /* AppDelegate.swift */; };
-		C34450641B52FEF9006529B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34450631B52FEF9006529B4 /* ViewController.swift */; };
 		C34450671B52FEF9006529B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C34450651B52FEF9006529B4 /* Main.storyboard */; };
 		C34450691B52FEF9006529B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34450681B52FEF9006529B4 /* Images.xcassets */; };
 		C344506C1B52FEF9006529B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C344506A1B52FEF9006529B4 /* LaunchScreen.xib */; };
@@ -26,10 +26,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C339617F1BEBDEB0004F0604 /* GradeComputerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeComputerViewController.swift; sourceTree = "<group>"; };
 		C344505C1B52FEF9006529B4 /* Grade Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grade Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34450601B52FEF9006529B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C34450611B52FEF9006529B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C34450631B52FEF9006529B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C34450661B52FEF9006529B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C34450681B52FEF9006529B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C344506B1B52FEF9006529B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				C34450611B52FEF9006529B4 /* AppDelegate.swift */,
-				C34450631B52FEF9006529B4 /* ViewController.swift */,
+				C339617F1BEBDEB0004F0604 /* GradeComputerViewController.swift */,
 				C34450651B52FEF9006529B4 /* Main.storyboard */,
 				C34450681B52FEF9006529B4 /* Images.xcassets */,
 				C344506A1B52FEF9006529B4 /* LaunchScreen.xib */,
@@ -157,7 +157,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Cassidy Wang";
 				TargetAttributes = {
 					C344505B1B52FEF9006529B4 = {
@@ -213,8 +213,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C34450641B52FEF9006529B4 /* ViewController.swift in Sources */,
 				C34450621B52FEF9006529B4 /* AppDelegate.swift in Sources */,
+				C33961801BEBDEB0004F0604 /* GradeComputerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +277,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -345,6 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Grade Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -355,6 +357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Grade Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -373,6 +376,7 @@
 				);
 				INFOPLIST_FILE = "Grade ManagerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Grade Manager.app/Grade Manager";
 			};
@@ -388,6 +392,7 @@
 				);
 				INFOPLIST_FILE = "Grade ManagerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Grade Manager.app/Grade Manager";
 			};
