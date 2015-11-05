@@ -1,7 +1,9 @@
 Nov 4, 2015
 To Do:
     -Layout for calculator page/function (within a course)
-        -Weighted categories
-        -Percent breakdown for letter grades
+        -Weighted categories set in root course info
+        -Percent breakdown for letter grades also set in root info
+        -User information entered in page with categories set according to root info
+        -Grades will be taken in raw score with the idea that user will do no calculation
     -Saving information to the device/cloud
     -Pulling information from Progressbook/T-Square
