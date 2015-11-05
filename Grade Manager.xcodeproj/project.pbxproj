@@ -156,6 +156,7 @@
 		C34450541B52FEF9006529B4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Cassidy Wang";
 				TargetAttributes = {
@@ -411,6 +412,7 @@
 				C344507D1B52FEF9006529B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C344507E1B52FEF9006529B4 /* Build configuration list for PBXNativeTarget "Grade ManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +421,7 @@
 				C34450801B52FEF9006529B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
