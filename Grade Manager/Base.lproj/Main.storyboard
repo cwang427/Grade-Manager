@@ -18,30 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2B-Ot-wlo" userLabel="Activity Indicator view">
-                                <rect key="frame" x="162" y="308" width="50" height="50"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uNW-s2-veb">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YUW-EX-zlA">
-                                            <rect key="frame" x="7" y="6" width="37" height="37"/>
-                                            <animations/>
-                                        </activityIndicatorView>
-                                    </subviews>
-                                    <animations/>
-                                    <constraints>
-                                        <constraint firstItem="YUW-EX-zlA" firstAttribute="centerY" secondItem="uNW-s2-veb" secondAttribute="centerY" id="Gt6-iI-Vde"/>
-                                        <constraint firstItem="YUW-EX-zlA" firstAttribute="centerX" secondItem="uNW-s2-veb" secondAttribute="centerX" id="pnS-Um-cT6"/>
-                                    </constraints>
-                                </view>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="APX-9t-VmB"/>
-                                    <constraint firstAttribute="height" constant="50" id="Drt-rM-V9Y"/>
-                                </constraints>
-                                <blurEffect style="dark"/>
-                            </visualEffectView>
                             <view opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="ipU-nl-fjH" userLabel="Login window">
                                 <rect key="frame" x="-4" y="208" width="383" height="250"/>
                                 <subviews>
@@ -68,41 +44,41 @@
                                         <rect key="frame" x="8" y="8" width="367" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhM-Ls-ofT" userLabel="Username prompt">
                                         <rect key="frame" x="16" y="45" width="79" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uC9-gO-rdR" userLabel="Password prompt">
-                                        <rect key="frame" x="16" y="120" width="74" height="20"/>
+                                        <rect key="frame" x="16" y="120" width="74" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stay logged in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b57-0N-1mD" userLabel="Save info prompt">
-                                        <rect key="frame" x="73" y="217" width="109" height="20"/>
+                                        <rect key="frame" x="73" y="216" width="109" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="celticnerd1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3EF-Q3-OOy" userLabel="Username field">
                                         <rect key="frame" x="16" y="74" width="359" height="30"/>
                                         <animations/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="gocelts" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iEU-aO-dBu" userLabel="Password field">
-                                        <rect key="frame" x="16" y="148" width="359" height="30"/>
+                                        <rect key="frame" x="16" y="149" width="359" height="30"/>
                                         <animations/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -192,23 +168,71 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2B-Ot-wlo" userLabel="Activity Indicator view">
+                                <rect key="frame" x="162" y="309" width="50" height="50"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uNW-s2-veb">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YUW-EX-zlA">
+                                            <rect key="frame" x="7" y="6" width="37" height="37"/>
+                                            <animations/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="YUW-EX-zlA" firstAttribute="centerY" secondItem="uNW-s2-veb" secondAttribute="centerY" id="Gt6-iI-Vde"/>
+                                        <constraint firstItem="YUW-EX-zlA" firstAttribute="centerX" secondItem="uNW-s2-veb" secondAttribute="centerX" id="pnS-Um-cT6"/>
+                                    </constraints>
+                                </view>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="APX-9t-VmB"/>
+                                    <constraint firstAttribute="height" constant="50" id="Drt-rM-V9Y"/>
+                                </constraints>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Den-7u-JBt" userLabel="Status bar">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="IZT-xF-6J8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <animations/>
+                                </view>
+                                <animations/>
+                                <color key="backgroundColor" red="0.7609075043630017" green="0.7609075043630017" blue="0.7609075043630017" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="G47-AH-NDr"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="i2B-Ot-wlo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0Bk-te-Q2c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Den-7u-JBt" secondAttribute="trailing" constant="-16" id="46N-Es-dQ8"/>
                             <constraint firstItem="ipU-nl-fjH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6Wz-QP-chq"/>
                             <constraint firstItem="ipU-nl-fjH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6vX-Nb-HMw"/>
-                            <constraint firstItem="i2B-Ot-wlo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lf4-7d-XqS"/>
+                            <constraint firstItem="Den-7u-JBt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9P8-Id-XR4"/>
+                            <constraint firstItem="Den-7u-JBt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="BiO-f2-M0j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Den-7u-JBt" secondAttribute="trailing" constant="-20" id="GOJ-Vw-E6s"/>
+                            <constraint firstItem="Den-7u-JBt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="LMu-Wp-JZM"/>
                             <constraint firstItem="ipU-nl-fjH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ReY-31-lKL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ipU-nl-fjH" secondAttribute="trailing" constant="-20" id="TKy-M7-rkI"/>
+                            <constraint firstItem="i2B-Ot-wlo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uh4-kP-S7p"/>
                             <constraint firstItem="ipU-nl-fjH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="moH-Mr-Y8Z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ipU-nl-fjH" secondAttribute="trailing" id="o1E-M8-aux"/>
+                            <constraint firstItem="Den-7u-JBt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qqd-Wa-Mxo"/>
+                            <constraint firstItem="Den-7u-JBt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="u48-q3-6xy"/>
                             <constraint firstItem="ipU-nl-fjH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xSi-Fr-SFF"/>
+                            <constraint firstItem="i2B-Ot-wlo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zMu-es-CGf"/>
                             <constraint firstItem="ipU-nl-fjH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zpX-JA-jxW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="BiO-f2-M0j"/>
+                                <exclude reference="GOJ-Vw-E6s"/>
+                                <exclude reference="qqd-Wa-Mxo"/>
                                 <exclude reference="6Wz-QP-chq"/>
                                 <exclude reference="6vX-Nb-HMw"/>
                                 <exclude reference="ReY-31-lKL"/>
@@ -220,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="215.5" y="433.5"/>
+            <point key="canvasLocation" x="171.5" y="419.5"/>
         </scene>
     </scenes>
 </document>
