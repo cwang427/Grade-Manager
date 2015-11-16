@@ -50,7 +50,7 @@ class GradeComputerViewController: UIViewController {
     //////////////////////////////////////////////////////////////////
     //FUNCTIONALITY BLOCK: Move text field if obstructed by keyboard//
     //////////////////////////////////////////////////////////////////
-    //TODO: QUICKTYPE BUGSSSSSAGHGHGH
+    
     func addKeyboardNotifications() {
         //Adds notifications for keyboard show/hide
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
@@ -66,10 +66,10 @@ class GradeComputerViewController: UIViewController {
     func keyboardWillChangeFrame(notification: NSNotification) {
         //Adjust view according to keyboard size
         let userInfo = notification.userInfo!
-        let keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()
+        let keyboardEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
         
         //Establishes location of top of keyboard relative to view coordinates
-        let keyboardHeight = keyboardFrame!.height
+        let keyboardHeight = keyboardEndFrame!.height
         let keyboardTop = self.view.frame.height - keyboardHeight
         
         //Distance from center of login window to top of keyboard
