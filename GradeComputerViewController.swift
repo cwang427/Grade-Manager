@@ -42,7 +42,7 @@ class GradeComputerViewController: UIViewController {
         removeKeyboardNotifications()
     }
     
-    //Closes keyboard
+    //Close keyboard
     func dismissKeyboard() {
         view.endEditing(true)
     }
