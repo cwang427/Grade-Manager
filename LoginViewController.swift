@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class GradeComputerViewController: UIViewController {
+class LoginViewController: UIViewController {
     //TODO: LOGIN KEYCHAIN
     //TODO: CONFIGURE "NEXT" AND "GO" KEYBOARD KEYS
     //TODO: KEYBOARD ANIMATION CURVE WITH QUICKTYPE
@@ -69,8 +69,7 @@ class GradeComputerViewController: UIViewController {
         let keyboardEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
         
         //Establishes location of top of keyboard relative to view coordinates
-        let keyboardHeight = keyboardEndFrame!.height
-        let keyboardTop = self.view.frame.height - keyboardHeight
+        let keyboardTop = self.view.frame.height - keyboardEndFrame!.height
         
         //Distance from center of login window to top of keyboard
         let windowCenterToKeyboardTop = keyboardTop - loginWindow.center.y
@@ -83,8 +82,7 @@ class GradeComputerViewController: UIViewController {
         }
         if let field = activeField {
             let fieldCenter = field.center.y + (self.view.frame.height/2.0 - loginWindow.frame.height/2.0)
-            let fieldHeight = field.frame.height
-            let fieldBottom = fieldCenter + (fieldHeight/2.0)
+            let fieldBottom = fieldCenter + (field.frame.height/2.0)
             let fieldToWindowCenter = loginWindow.center.y - fieldBottom
         
             //Moves field to center location, moves center location to top of keyboard

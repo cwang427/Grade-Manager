@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C323E5501BEC24E000905D9B /* GradeComputerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C323E54F1BEC24E000905D9B /* GradeComputerViewController.swift */; };
+		C323E5501BEC24E000905D9B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C323E54F1BEC24E000905D9B /* LoginViewController.swift */; };
 		C34450621B52FEF9006529B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34450611B52FEF9006529B4 /* AppDelegate.swift */; };
 		C34450671B52FEF9006529B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C34450651B52FEF9006529B4 /* Main.storyboard */; };
 		C34450691B52FEF9006529B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34450681B52FEF9006529B4 /* Images.xcassets */; };
@@ -26,7 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C323E54F1BEC24E000905D9B /* GradeComputerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradeComputerViewController.swift; path = ../GradeComputerViewController.swift; sourceTree = "<group>"; };
+		C323E54F1BEC24E000905D9B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
 		C344505C1B52FEF9006529B4 /* Grade Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grade Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34450601B52FEF9006529B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C34450611B52FEF9006529B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				C34450611B52FEF9006529B4 /* AppDelegate.swift */,
-				C323E54F1BEC24E000905D9B /* GradeComputerViewController.swift */,
+				C323E54F1BEC24E000905D9B /* LoginViewController.swift */,
 				C34450651B52FEF9006529B4 /* Main.storyboard */,
 				C34450681B52FEF9006529B4 /* Images.xcassets */,
 				C344506A1B52FEF9006529B4 /* LaunchScreen.xib */,
@@ -215,7 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C34450621B52FEF9006529B4 /* AppDelegate.swift in Sources */,
-				C323E5501BEC24E000905D9B /* GradeComputerViewController.swift in Sources */,
+				C323E5501BEC24E000905D9B /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
