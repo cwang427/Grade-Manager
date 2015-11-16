@@ -10,14 +10,14 @@ import UIKit
 import Foundation
 
 class GradeComputerViewController: UIViewController {
+    //TODO: LOGIN KEYCHAIN
     //TODO: CONFIGURE "NEXT" AND "GO" KEYBOARD KEYS
-    //TODO: SOMETIMES DOES NOT RUN BEFORE KEYBOARD IS SHOWN
+    //TODO: KEYBOARD ANIMATION CURVE WITH QUICKTYPE
+
     var activeField: UITextField?
     
-    @IBAction func beginEditing(sender: UITextField) {
-        activeField = sender
-    }
-    
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var loginWindow: UIView!
     @IBOutlet weak var loginWindowCenter: NSLayoutConstraint!
     
@@ -41,7 +41,7 @@ class GradeComputerViewController: UIViewController {
         //Removes keyboard notification observers when view disappears
         removeKeyboardNotifications()
     }
-    
+
     //Close keyboard
     func dismissKeyboard() {
         view.endEditing(true)
@@ -76,6 +76,11 @@ class GradeComputerViewController: UIViewController {
         let windowCenterToKeyboardTop = keyboardTop - loginWindow.center.y
         
         //Distance from bottom of field to center of login window (remember that field coordinates are relative to the login window superview)
+        if usernameField.isFirstResponder() {
+            activeField = usernameField
+        } else if passwordField.isFirstResponder() {
+            activeField = passwordField
+        }
         if let field = activeField {
             let fieldCenter = field.center.y + (self.view.frame.height/2.0 - loginWindow.frame.height/2.0)
             let fieldHeight = field.frame.height
