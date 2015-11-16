@@ -11,8 +11,14 @@ import Foundation
 
 class GradeComputerViewController: UIViewController {
     
+    //TODO: SOMETIMES DOES NOT RUN BEFORE KEYBOARD IS SHOWN
+    var activeField: UITextField?
     
-    @IBOutlet weak var windowView: UIView!
+    @IBAction func beginEditing(sender: UITextField) {
+        activeField = sender
+    }
+    
+    @IBOutlet weak var loginWindow: UIView!
     @IBOutlet weak var loginWindowCenter: NSLayoutConstraint!
     
     override func didReceiveMemoryWarning() {
@@ -21,17 +27,12 @@ class GradeComputerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Calls function to dismiss keyboard if view is tapped
+        //Calls function to dismiss keyboard if view is touched
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
-        let swipe: UIGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(swipe)
         
         //Add keyboard notification observers when view has loaded
         addKeyboardNotifications()
-        
-        print(windowView.center)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -40,11 +41,16 @@ class GradeComputerViewController: UIViewController {
         //Removes keyboard notification observers when view disappears
         removeKeyboardNotifications()
     }
+    
+    //Closes keyboard
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 
     //////////////////////////////////////////////////////////////////
     //FUNCTIONALITY BLOCK: Move text field if obstructed by keyboard//
     //////////////////////////////////////////////////////////////////
-    
+    //TODO: QUICKTYPE BUGSSSSSAGHGHGH
     func addKeyboardNotifications() {
         //Adds notifications for keyboard show/hide
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
@@ -58,35 +64,41 @@ class GradeComputerViewController: UIViewController {
     }
     
     func keyboardWillChangeFrame(notification: NSNotification) {
-//        //Adjust view according to keyboard size
-//        let info: NSDictionary = notification.userInfo!
-//        
-//        let keyboardEndFrame = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-//        let keyboardHeight = keyboardEndFrame.height
-//        
-//        self.view.frame.origin.y -= keyboardHeight
+        //Adjust view according to keyboard size
+        let userInfo = notification.userInfo!
+        let keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()
         
-        if let userInfo = notification.userInfo,
-            let keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue {
+        //Establishes location of top of keyboard relative to view coordinates
+        let keyboardHeight = keyboardFrame!.height
+        let keyboardTop = self.view.frame.height - keyboardHeight
+        
+        //Distance from center of login window to top of keyboard
+        let windowCenterToKeyboardTop = keyboardTop - loginWindow.center.y
+        
+        if let field = activeField {
+            let fieldCenter = field.center.y + (self.view.frame.height/2.0 - loginWindow.frame.height/2.0)
+            let fieldHeight = field.frame.height
+            let fieldBottom = fieldCenter + (fieldHeight/2.0)
+            let fieldToWindowCenter = loginWindow.center.y - fieldBottom
+            print("login window center: \(loginWindow.center.y)")
+            print("field bottom: \(fieldBottom)")
+            print("field bottom to window center: \(fieldToWindowCenter)")
+        
+            //Moves field to center location, moves center location to top of keyboard
+            let newConstant = -10 + fieldToWindowCenter + windowCenterToKeyboardTop
                 
-                let keyboardHeight = keyboardFrame().height
-                let newConstant = -10 - (keyboardHeight/3.0)
+            if newConstant == loginWindowCenter.constant { return }
                 
-                if newConstant == loginWindowCenter.constant { return }
-                
-                UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
+            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
                     self.loginWindowCenter.constant = newConstant
                     self.view.layoutIfNeeded()
-                    }, completion: nil)
-                
+                }, completion: nil)
         }
-        
-        print(windowView.center)
     }
     
     func keyboardWillHide(notification: NSNotification) {
         UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
-            self.windowView.center = self.view.center
+            self.loginWindowCenter.constant = 0.0
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
@@ -94,14 +106,6 @@ class GradeComputerViewController: UIViewController {
     ///////////////////////////
     //END FUNCTIONALITY BLOCK//
     ///////////////////////////
-    
-    //Closes keyboard
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    //Adjusts view position according to keyboard position
-    
     
     //Handles login process
     @IBAction func login() {

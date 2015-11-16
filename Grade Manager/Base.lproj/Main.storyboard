@@ -73,7 +73,10 @@
                                         <animations/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="beginEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="u1e-l3-h7O"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ox2-UM-LMz" userLabel="Login button">
                                         <rect key="frame" x="321" y="209" width="50" height="36"/>
@@ -89,7 +92,10 @@
                                         <animations/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="beginEditing:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="w1E-Nd-j1u"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <animations/>
@@ -174,8 +180,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="loginWindow" destination="ipU-nl-fjH" id="t11-lD-XZx"/>
                         <outlet property="loginWindowCenter" destination="WVZ-eG-pKH" id="fkJ-E3-uTE"/>
-                        <outlet property="windowView" destination="ipU-nl-fjH" id="Q5o-r1-xxu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
