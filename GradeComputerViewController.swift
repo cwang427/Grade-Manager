@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 class GradeComputerViewController: UIViewController {
-    
+    //TODO: CONFIGURE "NEXT" AND "GO" KEYBOARD KEYS
     //TODO: SOMETIMES DOES NOT RUN BEFORE KEYBOARD IS SHOWN
     var activeField: UITextField?
     
