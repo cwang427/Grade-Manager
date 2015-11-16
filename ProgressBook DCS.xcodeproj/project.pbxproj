@@ -27,13 +27,13 @@
 
 /* Begin PBXFileReference section */
 		C323E54F1BEC24E000905D9B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
-		C344505C1B52FEF9006529B4 /* Grade Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grade Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C344505C1B52FEF9006529B4 /* ProgressBook DCS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProgressBook DCS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34450601B52FEF9006529B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C34450611B52FEF9006529B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C34450661B52FEF9006529B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C34450681B52FEF9006529B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C344506B1B52FEF9006529B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C34450711B52FEF9006529B4 /* Grade ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grade ManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C34450711B52FEF9006529B4 /* ProgressBook DCS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ProgressBook DCS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34450761B52FEF9006529B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C34450771B52FEF9006529B4 /* Grade_ManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade_ManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,8 +68,8 @@
 		C344505D1B52FEF9006529B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C344505C1B52FEF9006529B4 /* Grade Manager.app */,
-				C34450711B52FEF9006529B4 /* Grade ManagerTests.xctest */,
+				C344505C1B52FEF9006529B4 /* ProgressBook DCS.app */,
+				C34450711B52FEF9006529B4 /* ProgressBook DCS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,9 +115,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C344505B1B52FEF9006529B4 /* Grade Manager */ = {
+		C344505B1B52FEF9006529B4 /* ProgressBook DCS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C344507B1B52FEF9006529B4 /* Build configuration list for PBXNativeTarget "Grade Manager" */;
+			buildConfigurationList = C344507B1B52FEF9006529B4 /* Build configuration list for PBXNativeTarget "ProgressBook DCS" */;
 			buildPhases = (
 				C34450581B52FEF9006529B4 /* Sources */,
 				C34450591B52FEF9006529B4 /* Frameworks */,
@@ -127,14 +127,14 @@
 			);
 			dependencies = (
 			);
-			name = "Grade Manager";
+			name = "ProgressBook DCS";
 			productName = "Grade Manager";
-			productReference = C344505C1B52FEF9006529B4 /* Grade Manager.app */;
+			productReference = C344505C1B52FEF9006529B4 /* ProgressBook DCS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C34450701B52FEF9006529B4 /* Grade ManagerTests */ = {
+		C34450701B52FEF9006529B4 /* ProgressBook DCSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C344507E1B52FEF9006529B4 /* Build configuration list for PBXNativeTarget "Grade ManagerTests" */;
+			buildConfigurationList = C344507E1B52FEF9006529B4 /* Build configuration list for PBXNativeTarget "ProgressBook DCSTests" */;
 			buildPhases = (
 				C344506D1B52FEF9006529B4 /* Sources */,
 				C344506E1B52FEF9006529B4 /* Frameworks */,
@@ -145,9 +145,9 @@
 			dependencies = (
 				C34450731B52FEF9006529B4 /* PBXTargetDependency */,
 			);
-			name = "Grade ManagerTests";
+			name = "ProgressBook DCSTests";
 			productName = "Grade ManagerTests";
-			productReference = C34450711B52FEF9006529B4 /* Grade ManagerTests.xctest */;
+			productReference = C34450711B52FEF9006529B4 /* ProgressBook DCS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -170,7 +170,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C34450571B52FEF9006529B4 /* Build configuration list for PBXProject "Grade Manager" */;
+			buildConfigurationList = C34450571B52FEF9006529B4 /* Build configuration list for PBXProject "ProgressBook DCS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -183,8 +183,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C344505B1B52FEF9006529B4 /* Grade Manager */,
-				C34450701B52FEF9006529B4 /* Grade ManagerTests */,
+				C344505B1B52FEF9006529B4 /* ProgressBook DCS */,
+				C34450701B52FEF9006529B4 /* ProgressBook DCSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -232,7 +232,7 @@
 /* Begin PBXTargetDependency section */
 		C34450731B52FEF9006529B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C344505B1B52FEF9006529B4 /* Grade Manager */;
+			target = C344505B1B52FEF9006529B4 /* ProgressBook DCS */;
 			targetProxy = C34450721B52FEF9006529B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -350,7 +350,7 @@
 				INFOPLIST_FILE = "Grade Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ProgressBook DCS";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -364,7 +364,7 @@
 				INFOPLIST_FILE = "Grade Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ProgressBook DCS";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -373,10 +373,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -384,8 +380,8 @@
 				INFOPLIST_FILE = "Grade ManagerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Grade Manager.app/Grade Manager";
+				PRODUCT_NAME = "ProgressBook DCS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProgressBook DCS.app/ProgressBook DCS";
 			};
 			name = Debug;
 		};
@@ -393,22 +389,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = "Grade ManagerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Grade Manager.app/Grade Manager";
+				PRODUCT_NAME = "ProgressBook DCS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProgressBook DCS.app/ProgressBook DCS";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C34450571B52FEF9006529B4 /* Build configuration list for PBXProject "Grade Manager" */ = {
+		C34450571B52FEF9006529B4 /* Build configuration list for PBXProject "ProgressBook DCS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C34450791B52FEF9006529B4 /* Debug */,
@@ -417,7 +409,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C344507B1B52FEF9006529B4 /* Build configuration list for PBXNativeTarget "Grade Manager" */ = {
+		C344507B1B52FEF9006529B4 /* Build configuration list for PBXNativeTarget "ProgressBook DCS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C344507C1B52FEF9006529B4 /* Debug */,
@@ -426,7 +418,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C344507E1B52FEF9006529B4 /* Build configuration list for PBXNativeTarget "Grade ManagerTests" */ = {
+		C344507E1B52FEF9006529B4 /* Build configuration list for PBXNativeTarget "ProgressBook DCSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C344507F1B52FEF9006529B4 /* Debug */,

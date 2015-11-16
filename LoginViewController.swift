@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //Calls function to dismiss keyboard if view is touched
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
@@ -42,26 +43,26 @@ class LoginViewController: UIViewController {
         removeKeyboardNotifications()
     }
 
-    //Close keyboard
+    //Closes keyboard
     func dismissKeyboard() {
         view.endEditing(true)
     }
 
-    //////////////////////////////////////////////////////////////////
-    //FUNCTIONALITY BLOCK: Move text field if obstructed by keyboard//
-    //////////////////////////////////////////////////////////////////
-    
+    //Adds notifications for keyboard show/hide
     func addKeyboardNotifications() {
-        //Adds notifications for keyboard show/hide
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillChangeFrame:", name: UIKeyboardWillChangeFrameNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    //Removes notifications for keyboard show/hide
     func removeKeyboardNotifications() {
-        //Removes notifications for keyboard show/hide
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
+    
+    ////////////////////////////////////////////////////////////////////
+    //FUNCTIONALITY BLOCK 1: Move text field if obstructed by keyboard//
+    ////////////////////////////////////////////////////////////////////
     
     func keyboardWillChangeFrame(notification: NSNotification) {
         //Adjust view according to keyboard size
@@ -104,12 +105,19 @@ class LoginViewController: UIViewController {
         }, completion: nil)
     }
     
-    ///////////////////////////
-    //END FUNCTIONALITY BLOCK//
-    ///////////////////////////
+    /////////////////////////////
+    //END FUNCTIONALITY BLOCK 1//
+    /////////////////////////////
     
-    //Handles login process
+    /////////////////////////////////////////////////////////////
+    //FUNCTIONALITY BLOCK 2: Handles login process and keychain//
+    /////////////////////////////////////////////////////////////
+    
     @IBAction func login() {
         print("logging in...")
     }
+    
+    /////////////////////////////
+    //END FUNCTIONALITY BLOCK 2//
+    /////////////////////////////
 }

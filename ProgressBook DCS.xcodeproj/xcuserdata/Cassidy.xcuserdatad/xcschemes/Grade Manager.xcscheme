@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C344505B1B52FEF9006529B4"
-               BuildableName = "Grade Manager.app"
-               BlueprintName = "Grade Manager"
-               ReferencedContainer = "container:Grade Manager.xcodeproj">
+               BuildableName = "ProgressBook DCS.app"
+               BlueprintName = "ProgressBook DCS"
+               ReferencedContainer = "container:ProgressBook DCS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C34450701B52FEF9006529B4"
-               BuildableName = "Grade ManagerTests.xctest"
-               BlueprintName = "Grade ManagerTests"
-               ReferencedContainer = "container:Grade Manager.xcodeproj">
+               BuildableName = "ProgressBook DCS.xctest"
+               BlueprintName = "ProgressBook DCSTests"
+               ReferencedContainer = "container:ProgressBook DCS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C34450701B52FEF9006529B4"
-               BuildableName = "Grade ManagerTests.xctest"
-               BlueprintName = "Grade ManagerTests"
-               ReferencedContainer = "container:Grade Manager.xcodeproj">
+               BuildableName = "ProgressBook DCS.xctest"
+               BlueprintName = "ProgressBook DCSTests"
+               ReferencedContainer = "container:ProgressBook DCS.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C344505B1B52FEF9006529B4"
-            BuildableName = "Grade Manager.app"
-            BlueprintName = "Grade Manager"
-            ReferencedContainer = "container:Grade Manager.xcodeproj">
+            BuildableName = "ProgressBook DCS.app"
+            BlueprintName = "ProgressBook DCS"
+            ReferencedContainer = "container:ProgressBook DCS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C344505B1B52FEF9006529B4"
-            BuildableName = "Grade Manager.app"
-            BlueprintName = "Grade Manager"
-            ReferencedContainer = "container:Grade Manager.xcodeproj">
+            BuildableName = "ProgressBook DCS.app"
+            BlueprintName = "ProgressBook DCS"
+            ReferencedContainer = "container:ProgressBook DCS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -99,9 +99,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C344505B1B52FEF9006529B4"
-            BuildableName = "Grade Manager.app"
-            BlueprintName = "Grade Manager"
-            ReferencedContainer = "container:Grade Manager.xcodeproj">
+            BuildableName = "ProgressBook DCS.app"
+            BlueprintName = "ProgressBook DCS"
+            ReferencedContainer = "container:ProgressBook DCS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
