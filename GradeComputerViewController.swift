@@ -75,18 +75,16 @@ class GradeComputerViewController: UIViewController {
         //Distance from center of login window to top of keyboard
         let windowCenterToKeyboardTop = keyboardTop - loginWindow.center.y
         
+        //Distance from bottom of field to center of login window (remember that field coordinates are relative to the login window superview)
         if let field = activeField {
             let fieldCenter = field.center.y + (self.view.frame.height/2.0 - loginWindow.frame.height/2.0)
             let fieldHeight = field.frame.height
             let fieldBottom = fieldCenter + (fieldHeight/2.0)
             let fieldToWindowCenter = loginWindow.center.y - fieldBottom
-            print("login window center: \(loginWindow.center.y)")
-            print("field bottom: \(fieldBottom)")
-            print("field bottom to window center: \(fieldToWindowCenter)")
         
             //Moves field to center location, moves center location to top of keyboard
             let newConstant = -10 + fieldToWindowCenter + windowCenterToKeyboardTop
-                
+            
             if newConstant == loginWindowCenter.constant { return }
                 
             UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
