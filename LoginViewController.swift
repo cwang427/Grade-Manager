@@ -12,7 +12,6 @@ import Foundation
 class LoginViewController: UIViewController {
     //TODO: LOGIN KEYCHAIN
     //TODO: CONFIGURE "NEXT" AND "GO" KEYBOARD KEYS
-    //TODO: KEYBOARD ANIMATION CURVE WITH QUICKTYPE
 
     var activeField: UITextField?
     
@@ -90,8 +89,12 @@ class LoginViewController: UIViewController {
             let newConstant = -10 + fieldToWindowCenter + windowCenterToKeyboardTop
             
             if newConstant == loginWindowCenter.constant { return }
-                
-            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
+            
+            //Find keyboard animation duration and curve
+            let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
+            
+            //Move view with keyboard animation
+            UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [.CurveEaseInOut], animations: {
                     self.loginWindowCenter.constant = newConstant
                     self.view.layoutIfNeeded()
                 }, completion: nil)
@@ -99,7 +102,9 @@ class LoginViewController: UIViewController {
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
+        let userInfo = notification.userInfo!
+        let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
+        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [.CurveEaseInOut], animations: {
             self.loginWindowCenter.constant = 0.0
             self.view.layoutIfNeeded()
         }, completion: nil)
