@@ -9,9 +9,8 @@
 import UIKit
 import Foundation
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     //TODO: LOGIN KEYCHAIN
-    //TODO: CONFIGURE "NEXT" AND "GO" KEYBOARD KEYS
 
     var activeField: UITextField?
     
@@ -26,6 +25,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Override username and password events
+        usernameField.delegate = self
+        passwordField.delegate = self
         
         //Calls function to dismiss keyboard if view is touched
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -57,6 +60,17 @@ class LoginViewController: UIViewController {
     func removeKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    //Configures return buttons on username and password field keyboards
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == self.passwordField {
+            textField.resignFirstResponder()
+            login()
+        } else if textField == self.usernameField {
+            self.passwordField.becomeFirstResponder()
+        }
+        return true
     }
     
     ////////////////////////////////////////////////////////////////////
