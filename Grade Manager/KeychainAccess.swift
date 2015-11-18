@@ -5,12 +5,11 @@
 //  Created by Cassidy Wang on 11/18/15.
 //  Copyright © 2015 Cassidy Wang. All rights reserved.
 //
-//  Sourced from Stack Overflow
+//  Adapted from Stack Overflow
 //  http://stackoverflow.com/questions/25513106/trying-to-use-keychainitemwrapper-by-apple-translated-to-swift
 
 import UIKit;
 import Security;
-
 
 let kSecClassGenericPasswordValue = NSString(format: kSecClassGenericPassword);
 let kSecClassValue = NSString(format: kSecClass);
@@ -21,7 +20,6 @@ let kSecReturnDataValue = NSString(format: kSecReturnData);
 let kSecMatchLimitOneValue = NSString(format: kSecMatchLimitOne);
 let kSecAttrAccountValue = NSString(format: kSecAttrAccount);
 
-
 class KeychainAccess: NSObject {
     
     func setPasscode(identifier: String, passcode: String) {
@@ -30,9 +28,8 @@ class KeychainAccess: NSObject {
             objects: [kSecClassGenericPasswordValue, identifier, dataFromString],
             forKeys: [kSecClassValue, kSecAttrServiceValue, kSecValueDataValue]);
         SecItemDelete(keychainQuery as CFDictionaryRef);
-        let status: OSStatus = SecItemAdd(keychainQuery as CFDictionaryRef, nil);
+        let _: OSStatus = SecItemAdd(keychainQuery as CFDictionaryRef, nil);
     }
-    
     
     func getPasscode(identifier: String) -> NSString? {
         let keychainQuery = NSDictionary(

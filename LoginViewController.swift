@@ -10,9 +10,12 @@ import UIKit
 import Foundation
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-
+    
+    //TODO: Try NSUserDefaults
+    
     let keychainInfo = KeychainAccess()
     var activeField: UITextField?
+    var switchStatus: Bool = true //TODO: need to store this value
     
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
@@ -22,6 +25,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         setSavedUserInfo()
+        saveInfoSwitch.setOn(switchStatus, animated: false)
     }
     
     override func viewDidLoad() {
@@ -46,16 +50,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         removeKeyboardNotifications()
     }
 
-    //Sets saved user info if switch is on
+    //Fills fields with saved user info
     func setSavedUserInfo() {
-        if saveInfoSwitch.on {
-            if let storedPassword = keychainInfo.getPasscode("edu.gatech.cassidy.password") {
-                passwordField.text = String(storedPassword)
-                print(passwordField.text!)
-            }
+        if let storedPassword = keychainInfo.getPasscode("edu.gatech.cassidy.password") {
+            passwordField.text = String(storedPassword)
         }
     }
-    
     
     //Closes keyboard
     func dismissKeyboard() {
@@ -78,16 +78,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == self.passwordField {
             textField.resignFirstResponder()
-            login()
+            attemptLogin()
         } else if textField == self.usernameField {
             self.passwordField.becomeFirstResponder()
         }
         return true
     }
     
-    ////////////////////////////////////////////////////////////////////
-    //FUNCTIONALITY BLOCK 1: Move text field if obstructed by keyboard//
-    ////////////////////////////////////////////////////////////////////
+    //FUNCTIONALITY BLOCK 1: Move text field if obstructed by keyboard
     
     func keyboardWillChangeFrame(notification: NSNotification) {
         //Adjust view according to keyboard size
@@ -136,21 +134,38 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }, completion: nil)
     }
     
-    /////////////////////////////
-    //END FUNCTIONALITY BLOCK 1//
-    /////////////////////////////
+    //END FUNCTIONALITY BLOCK 1
+
+    //FUNCTIONALITY BLOCK 2: Handles login process and keychain
     
-    /////////////////////////////////////////////////////////////
-    //FUNCTIONALITY BLOCK 2: Handles login process and keychain//
-    /////////////////////////////////////////////////////////////
-    
-    @IBAction func login() {
-        print("logging in...")
-        
-        keychainInfo.setPasscode("edu.gatech.cassidy.password", passcode: passwordField.text!)
+    @IBAction func attemptLogin() {
+        if !usernameField.hasText() || !passwordField.hasText() {
+            shakeItOff(self.loginWindow)
+            return
+        }
+        login()
     }
     
-    /////////////////////////////
-    //END FUNCTIONALITY BLOCK 2//
-    /////////////////////////////
+    func login() {
+        print("logging in...")
+        if saveInfoSwitch.on {
+            keychainInfo.setPasscode("edu.gatech.cassidy.password", passcode: passwordField.text!)
+        } else {
+            keychainInfo.setPasscode("edu.gatech.cassidy.password", passcode: "")
+        }
+    }
+
+    //END FUNCTIONALITY BLOCK 2
+    
+    //Shakes view
+    func shakeItOff(view: UIView) {
+        let animations : [CGFloat] = [20.0, -20.0, 10.0, -10.0, 3.0, -3.0, 0]
+        for i in 0 ..< animations.count {
+            let frameOrigin = CGPointMake(view.frame.origin.x + animations[i], view.frame.origin.y)
+            
+            UIView.animateWithDuration(0.1, delay: NSTimeInterval(0.1 * Double(i)), options: [], animations: {
+                view.frame.origin = frameOrigin
+                }, completion: nil)
+        }
+    }
 }
