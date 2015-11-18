@@ -10,17 +10,18 @@ import UIKit
 import Foundation
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-    //TODO: LOGIN KEYCHAIN
 
+    let keychainInfo = KeychainAccess()
     var activeField: UITextField?
     
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var loginWindow: UIView!
     @IBOutlet weak var loginWindowCenter: NSLayoutConstraint!
+    @IBOutlet weak var saveInfoSwitch: UISwitch!
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewWillAppear(animated: Bool) {
+        setSavedUserInfo()
     }
     
     override func viewDidLoad() {
@@ -45,6 +46,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         removeKeyboardNotifications()
     }
 
+    //Sets saved user info if switch is on
+    func setSavedUserInfo() {
+        if saveInfoSwitch.on {
+            if let storedPassword = keychainInfo.getPasscode("edu.gatech.cassidy.password") {
+                passwordField.text = String(storedPassword)
+                print(passwordField.text!)
+            }
+        }
+    }
+    
+    
     //Closes keyboard
     func dismissKeyboard() {
         view.endEditing(true)
@@ -104,7 +116,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             if newConstant == loginWindowCenter.constant { return }
             
-            //Find keyboard animation duration and curve
+            //Find keyboard animation duration
             let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
             
             //Move view with keyboard animation
@@ -134,6 +146,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func login() {
         print("logging in...")
+        
+        keychainInfo.setPasscode("edu.gatech.cassidy.password", passcode: passwordField.text!)
     }
     
     /////////////////////////////

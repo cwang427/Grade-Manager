@@ -177,6 +177,7 @@
                         <outlet property="loginWindow" destination="ipU-nl-fjH" id="t11-lD-XZx"/>
                         <outlet property="loginWindowCenter" destination="WVZ-eG-pKH" id="fkJ-E3-uTE"/>
                         <outlet property="passwordField" destination="iEU-aO-dBu" id="twf-pk-MuN"/>
+                        <outlet property="saveInfoSwitch" destination="7E3-Rj-C5x" id="DXF-me-ETx"/>
                         <outlet property="usernameField" destination="3EF-Q3-OOy" id="zHL-si-101"/>
                     </connections>
                 </viewController>
