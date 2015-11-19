@@ -11,11 +11,9 @@ import Foundation
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    //TODO: Try NSUserDefaults
-    
     let keychainInfo = KeychainAccess()
+    let prefs = NSUserDefaults.standardUserDefaults()
     var activeField: UITextField?
-    var switchStatus: Bool = true //TODO: need to store this value
     
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
@@ -25,7 +23,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         setSavedUserInfo()
-        saveInfoSwitch.setOn(switchStatus, animated: false)
+        if (prefs.boolForKey("switchStatus") == false) {
+            saveInfoSwitch.setOn(false, animated: false)
+        } else {
+            saveInfoSwitch.setOn(true, animated: false)
+        }
     }
     
     override func viewDidLoad() {
@@ -150,8 +152,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         print("logging in...")
         if saveInfoSwitch.on {
             keychainInfo.setPasscode("edu.gatech.cassidy.password", passcode: passwordField.text!)
+            prefs.setBool(saveInfoSwitch.on, forKey: "switchStatus")
+            prefs.synchronize()
         } else {
             keychainInfo.setPasscode("edu.gatech.cassidy.password", passcode: "")
+            prefs.setBool(saveInfoSwitch.on, forKey: "switchStatus")
+            prefs.synchronize()
         }
     }
 
