@@ -22,8 +22,8 @@ let kSecAttrAccountValue = NSString(format: kSecAttrAccount);
 
 class KeychainAccess: NSObject {
     
-    func setPasscode(identifier: String, passcode: String) {
-        let dataFromString: NSData = passcode.dataUsingEncoding(NSUTF8StringEncoding)!;
+    func setKeychain(identifier: String, value: String) {
+        let dataFromString: NSData = value.dataUsingEncoding(NSUTF8StringEncoding)!;
         let keychainQuery = NSDictionary(
             objects: [kSecClassGenericPasswordValue, identifier, dataFromString],
             forKeys: [kSecClassValue, kSecAttrServiceValue, kSecValueDataValue]);
@@ -31,7 +31,7 @@ class KeychainAccess: NSObject {
         let _: OSStatus = SecItemAdd(keychainQuery as CFDictionaryRef, nil);
     }
     
-    func getPasscode(identifier: String) -> NSString? {
+    func getKeychain(identifier: String) -> NSString? {
         let keychainQuery = NSDictionary(
             objects: [kSecClassGenericPasswordValue, identifier, kCFBooleanTrue, kSecMatchLimitOneValue],
             forKeys: [kSecClassValue, kSecAttrServiceValue, kSecReturnDataValue, kSecMatchLimitValue]);

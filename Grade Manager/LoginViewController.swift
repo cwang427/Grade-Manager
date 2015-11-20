@@ -54,8 +54,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     //Fills fields with saved user info
     func setSavedUserInfo() {
-        if let storedPassword = keychainInfo.getPasscode("edu.gatech.cassidy.password") {
+        if let storedPassword = keychainInfo.getKeychain("edu.gatech.cassidy.PBDCS-password") {
             passwordField.text = String(storedPassword)
+        }
+        if let storedUsername = keychainInfo.getKeychain("edu.gatech.cassidy.PBDCS-username") {
+            usernameField.text = String(storedUsername)
         }
     }
     
@@ -87,7 +90,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    //FUNCTIONALITY BLOCK 1: Move text field if obstructed by keyboard
+    //MARK: - Move text field if obstructed by keyboard
     
     func keyboardWillChangeFrame(notification: NSNotification) {
         //Adjust view according to keyboard size
@@ -135,10 +138,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
-    
-    //END FUNCTIONALITY BLOCK 1
 
-    //FUNCTIONALITY BLOCK 2: Handles login process and keychain
+    //MARK: - Handles login process and keychain
     
     @IBAction func attemptLogin() {
         if !usernameField.hasText() || !passwordField.hasText() {
@@ -151,11 +152,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func login() {
         print("logging in...")
         if saveInfoSwitch.on {
-            keychainInfo.setPasscode("edu.gatech.cassidy.password", passcode: passwordField.text!)
+            keychainInfo.setKeychain("edu.gatech.cassidy.PBDCS-password", value: passwordField.text!)
+            keychainInfo.setKeychain("edu.gatech.cassidy.PBDCS-username", value: usernameField.text!)
             prefs.setBool(saveInfoSwitch.on, forKey: "switchStatus")
             prefs.synchronize()
         } else {
-            keychainInfo.setPasscode("edu.gatech.cassidy.password", passcode: "")
+            keychainInfo.setKeychain("edu.gatech.cassidy.PBDCS-password", value: "")
+            keychainInfo.setKeychain("edu.gatech.cassidy.PBDCS-username", value: "")
             prefs.setBool(saveInfoSwitch.on, forKey: "switchStatus")
             prefs.synchronize()
         }
