@@ -37,10 +37,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         usernameField.delegate = self
         passwordField.delegate = self
         
-        //Calls function to dismiss keyboard if view is touched
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
-        
         //Add keyboard notification observers when view has loaded
         addKeyboardNotifications()
     }
@@ -62,9 +58,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    //Closes keyboard
-    func dismissKeyboard() {
-        view.endEditing(true)
+    @IBAction func dismissKeyboardTap(sender: UITapGestureRecognizer) {
+        view.endEditing(true);
     }
 
     //Adds notifications for keyboard show/hide
