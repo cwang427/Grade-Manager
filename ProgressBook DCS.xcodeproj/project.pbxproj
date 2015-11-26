@@ -13,6 +13,7 @@
 		C34450691B52FEF9006529B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34450681B52FEF9006529B4 /* Images.xcassets */; };
 		C344506C1B52FEF9006529B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C344506A1B52FEF9006529B4 /* LaunchScreen.xib */; };
 		C34450781B52FEF9006529B4 /* Grade_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34450771B52FEF9006529B4 /* Grade_ManagerTests.swift */; };
+		C385D84D1C0512D900017478 /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C385D84C1C0512D900017478 /* ClassesViewController.swift */; };
 		C3C80D261BFD31B800F3A4FB /* KeychainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C80D251BFD31B800F3A4FB /* KeychainAccess.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		C34450711B52FEF9006529B4 /* ProgressBook DCS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ProgressBook DCS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34450761B52FEF9006529B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C34450771B52FEF9006529B4 /* Grade_ManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade_ManagerTests.swift; sourceTree = "<group>"; };
+		C385D84C1C0512D900017478 /* ClassesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
 		C3C80D251BFD31B800F3A4FB /* KeychainAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainAccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 				C34450611B52FEF9006529B4 /* AppDelegate.swift */,
 				C323E54F1BEC24E000905D9B /* LoginViewController.swift */,
 				C34450651B52FEF9006529B4 /* Main.storyboard */,
+				C385D84C1C0512D900017478 /* ClassesViewController.swift */,
 				C3C80D251BFD31B800F3A4FB /* KeychainAccess.swift */,
 				C34450681B52FEF9006529B4 /* Images.xcassets */,
 				C344506A1B52FEF9006529B4 /* LaunchScreen.xib */,
@@ -220,6 +223,7 @@
 				C34450621B52FEF9006529B4 /* AppDelegate.swift in Sources */,
 				C3C80D261BFD31B800F3A4FB /* KeychainAccess.swift in Sources */,
 				C323E5501BEC24E000905D9B /* LoginViewController.swift in Sources */,
+				C385D84D1C0512D900017478 /* ClassesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

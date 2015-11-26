@@ -21,15 +21,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginWindowCenter: NSLayoutConstraint!
     @IBOutlet weak var saveInfoSwitch: UISwitch!
     
-    override func viewWillAppear(animated: Bool) {
-        setSavedUserInfo()
-        if (prefs.boolForKey("switchStatus") == false) {
-            saveInfoSwitch.setOn(false, animated: false)
-        } else {
-            saveInfoSwitch.setOn(true, animated: false)
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,12 +32,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         addKeyboardNotifications()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        //Removes keyboard notification observers when view disappears
-        removeKeyboardNotifications()
+    override func viewWillAppear(animated: Bool) {
+        setSavedUserInfo()
+        if (prefs.boolForKey("switchStatus") == false) {
+            saveInfoSwitch.setOn(false, animated: false)
+        } else {
+            saveInfoSwitch.setOn(true, animated: false)
+        }
     }
+
+    override func viewDidAppear(animated: Bool) {
+        if usernameField.hasText() && passwordField.hasText() {
+            login()
+        }
+        
+    }
+    
+//    override func viewWillDisappear(animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        
+//        //Removes keyboard notification observers when view disappears
+//        removeKeyboardNotifications()
+//    }
 
     //Fills fields with saved user info
     func setSavedUserInfo() {
@@ -68,11 +75,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    //Removes notifications for keyboard show/hide
-    func removeKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
-    }
+//    //Removes notifications for keyboard show/hide
+//    func removeKeyboardNotifications() {
+//        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+//    }
     
     //Configures return buttons on username and password field keyboards
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -136,6 +143,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: - Handles login process and keychain
     
+    //TODO: else ifs to verify login information
     @IBAction func attemptLogin() {
         if !usernameField.hasText() || !passwordField.hasText() {
             shakeItOff(self.loginWindow)
@@ -145,7 +153,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func login() {
-        print("logging in...")
         if saveInfoSwitch.on {
             keychainInfo.setKeychain("edu.gatech.cassidy.PBDCS-password", value: passwordField.text!)
             keychainInfo.setKeychain("edu.gatech.cassidy.PBDCS-username", value: usernameField.text!)
@@ -157,9 +164,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             prefs.setBool(saveInfoSwitch.on, forKey: "switchStatus")
             prefs.synchronize()
         }
+        self.performSegueWithIdentifier("loginSegue", sender: self)
     }
-
-    //END FUNCTIONALITY BLOCK 2
     
     //Shakes view
     func shakeItOff(view: UIView) {
