@@ -47,7 +47,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
-    
+    //TODO: Re-add notifications after logout
 //    override func viewWillDisappear(animated: Bool) {
 //        super.viewWillDisappear(animated)
 //        
