@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import Parse
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -66,7 +67,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func dismissKeyboardTap(sender: UITapGestureRecognizer) {
-        view.endEditing(true);
+        view.endEditing(true)
     }
 
     //Adds notifications for keyboard show/hide
